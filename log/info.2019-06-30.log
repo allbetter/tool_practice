@@ -1,0 +1,234 @@
+Starting PlatformApplication on SC-201706110146 with PID 16028 (F:\ideaProject\platform\target\classes started by Administrator in F:\ideaProject\platform)
+No active profile set, falling back to default profiles: default
+Tomcat initialized with port(s): 7779 (http)
+Initializing ProtocolHandler ["http-nio-7779"]
+Starting service [Tomcat]
+Starting Servlet engine: [Apache Tomcat/9.0.21]
+Initializing Spring embedded WebApplicationContext
+Root WebApplicationContext: initialization completed in 3545 ms
+Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'BusinessUnitService': Unsatisfied dependency expressed through field 'businessUnitMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'businessUnitMapper' defined in file [F:\ideaProject\platform\target\classes\com\up\platform\mapper\BusinessUnitMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [F:\ideaProject\platform\target\classes\mapping\BusinessUnitMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [F:\ideaProject\platform\target\classes\mapping\BusinessUnitMapper.xml]'. Cause: java.lang.IllegalArgumentException: Result Maps collection already contains value for com.up.platform.mapper.BusinessUnitMapper.BaseResultMap
+Stopping service [Tomcat]
+
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+Starting PlatformApplication on SC-201706110146 with PID 11076 (F:\ideaProject\platform\target\classes started by Administrator in F:\ideaProject\platform)
+No active profile set, falling back to default profiles: default
+Tomcat initialized with port(s): 7779 (http)
+Initializing ProtocolHandler ["http-nio-7779"]
+Starting service [Tomcat]
+Starting Servlet engine: [Apache Tomcat/9.0.21]
+Initializing Spring embedded WebApplicationContext
+Root WebApplicationContext: initialization completed in 3112 ms
+Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'BusinessUnitService': Unsatisfied dependency expressed through field 'businessUnitMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'businessUnitMapper' defined in file [F:\ideaProject\platform\target\classes\com\up\platform\mapper\BusinessUnitMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [F:\ideaProject\platform\target\classes\mapping\BusinessUnitMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [F:\ideaProject\platform\target\classes\mapping\BusinessUnitMapper.xml]'. Cause: java.lang.IllegalArgumentException: Result Maps collection already contains value for com.up.platform.mapper.BusinessUnitMapper.BaseResultMap
+Stopping service [Tomcat]
+
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+Starting PlatformApplication on SC-201706110146 with PID 8380 (F:\ideaProject\platform\target\classes started by Administrator in F:\ideaProject\platform)
+No active profile set, falling back to default profiles: default
+Tomcat initialized with port(s): 7779 (http)
+Initializing ProtocolHandler ["http-nio-7779"]
+Starting service [Tomcat]
+Starting Servlet engine: [Apache Tomcat/9.0.21]
+Initializing Spring embedded WebApplicationContext
+Root WebApplicationContext: initialization completed in 3850 ms
+Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'BusinessUnitService': Unsatisfied dependency expressed through field 'businessUnitMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'businessUnitMapper' defined in file [F:\ideaProject\platform\target\classes\com\up\platform\mapper\BusinessUnitMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [F:\ideaProject\platform\target\classes\mapping\BusinessUnitMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [F:\ideaProject\platform\target\classes\mapping\BusinessUnitMapper.xml]'. Cause: java.lang.IllegalArgumentException: Result Maps collection already contains value for com.up.platform.mapper.BusinessUnitMapper.BaseResultMap
+Stopping service [Tomcat]
+
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+Starting PlatformApplication on SC-201706110146 with PID 6572 (F:\ideaProject\platform\target\classes started by Administrator in F:\ideaProject\platform)
+No active profile set, falling back to default profiles: default
+Tomcat initialized with port(s): 7779 (http)
+Initializing ProtocolHandler ["http-nio-7779"]
+Starting service [Tomcat]
+Starting Servlet engine: [Apache Tomcat/9.0.21]
+Initializing Spring embedded WebApplicationContext
+Root WebApplicationContext: initialization completed in 3010 ms
+Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'BusinessUnitService': Unsatisfied dependency expressed through field 'businessUnitMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'businessUnitMapper' defined in file [F:\ideaProject\platform\target\classes\com\up\platform\mapper\BusinessUnitMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [F:\ideaProject\platform\target\classes\mapping\BusinessUnitMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [F:\ideaProject\platform\target\classes\mapping\BusinessUnitMapper.xml]'. Cause: java.lang.IllegalArgumentException: Result Maps collection already contains value for com.up.platform.mapper.BusinessUnitMapper.BaseResultMap
+Stopping service [Tomcat]
+
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+Starting PlatformApplication on SC-201706110146 with PID 15712 (F:\ideaProject\platform\target\classes started by Administrator in F:\ideaProject\platform)
+No active profile set, falling back to default profiles: default
+Tomcat initialized with port(s): 7779 (http)
+Initializing ProtocolHandler ["http-nio-7779"]
+Starting service [Tomcat]
+Starting Servlet engine: [Apache Tomcat/9.0.21]
+Initializing Spring embedded WebApplicationContext
+Root WebApplicationContext: initialization completed in 5289 ms
+Initializing ExecutorService 'applicationTaskExecutor'
+Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'com.github.pagehelper.autoconfigure.PageHelperAutoConfiguration': Post-processing of merged bean definition failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [com.github.pagehelper.autoconfigure.PageHelperAutoConfiguration] from ClassLoader [sun.misc.Launcher$AppClassLoader@18b4aac2]
+Shutting down ExecutorService 'applicationTaskExecutor'
+Stopping service [Tomcat]
+
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+Starting PlatformApplication on SC-201706110146 with PID 15440 (F:\ideaProject\platform\target\classes started by Administrator in F:\ideaProject\platform)
+No active profile set, falling back to default profiles: default
+Tomcat initialized with port(s): 7779 (http)
+Initializing ProtocolHandler ["http-nio-7779"]
+Starting service [Tomcat]
+Starting Servlet engine: [Apache Tomcat/9.0.21]
+Initializing Spring embedded WebApplicationContext
+Root WebApplicationContext: initialization completed in 3924 ms
+Initializing ExecutorService 'applicationTaskExecutor'
+Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'com.github.pagehelper.autoconfigure.PageHelperAutoConfiguration': Post-processing of merged bean definition failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [com.github.pagehelper.autoconfigure.PageHelperAutoConfiguration] from ClassLoader [sun.misc.Launcher$AppClassLoader@18b4aac2]
+Shutting down ExecutorService 'applicationTaskExecutor'
+Stopping service [Tomcat]
+
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+Starting PlatformApplication on SC-201706110146 with PID 2512 (F:\ideaProject\platform\target\classes started by Administrator in F:\ideaProject\platform)
+No active profile set, falling back to default profiles: default
+Tomcat initialized with port(s): 7779 (http)
+Initializing ProtocolHandler ["http-nio-7779"]
+Starting service [Tomcat]
+Starting Servlet engine: [Apache Tomcat/9.0.21]
+Initializing Spring embedded WebApplicationContext
+Root WebApplicationContext: initialization completed in 3930 ms
+Initializing ExecutorService 'applicationTaskExecutor'
+Starting ProtocolHandler ["http-nio-7779"]
+Tomcat started on port(s): 7779 (http) with context path ''
+Started PlatformApplication in 10.574 seconds (JVM running for 15.25)
+Starting PlatformApplication on SC-201706110146 with PID 16936 (F:\ideaProject\platform\target\classes started by Administrator in F:\ideaProject\platform)
+No active profile set, falling back to default profiles: default
+Tomcat initialized with port(s): 7779 (http)
+Initializing ProtocolHandler ["http-nio-7779"]
+Starting service [Tomcat]
+Starting Servlet engine: [Apache Tomcat/9.0.21]
+Initializing Spring embedded WebApplicationContext
+Root WebApplicationContext: initialization completed in 4784 ms
+Initializing ExecutorService 'applicationTaskExecutor'
+Starting ProtocolHandler ["http-nio-7779"]
+Tomcat started on port(s): 7779 (http) with context path ''
+Started PlatformApplication in 8.261 seconds (JVM running for 12.219)
+Starting PlatformApplication on SC-201706110146 with PID 16352 (F:\ideaProject\platform\target\classes started by Administrator in F:\ideaProject\platform)
+No active profile set, falling back to default profiles: default
+Tomcat initialized with port(s): 7779 (http)
+Initializing ProtocolHandler ["http-nio-7779"]
+Starting service [Tomcat]
+Starting Servlet engine: [Apache Tomcat/9.0.21]
+Initializing Spring embedded WebApplicationContext
+Root WebApplicationContext: initialization completed in 4368 ms
+Initializing ExecutorService 'applicationTaskExecutor'
+Starting ProtocolHandler ["http-nio-7779"]
+Tomcat started on port(s): 7779 (http) with context path '/api'
+Started PlatformApplication in 10.613 seconds (JVM running for 17.067)
+Initializing Spring DispatcherServlet 'dispatcherServlet'
+Initializing Servlet 'dispatcherServlet'
+Completed initialization in 44 ms
+Starting PlatformApplication on SC-201706110146 with PID 12816 (F:\ideaProject\platform\target\classes started by Administrator in F:\ideaProject\platform)
+No active profile set, falling back to default profiles: default
+Tomcat initialized with port(s): 7779 (http)
+Initializing ProtocolHandler ["http-nio-7779"]
+Starting service [Tomcat]
+Starting Servlet engine: [Apache Tomcat/9.0.21]
+Initializing Spring embedded WebApplicationContext
+Root WebApplicationContext: initialization completed in 3127 ms
+Initializing ExecutorService 'applicationTaskExecutor'
+Starting ProtocolHandler ["http-nio-7779"]
+Tomcat started on port(s): 7779 (http) with context path ''
+Started PlatformApplication in 6.861 seconds (JVM running for 11.445)
+Initializing Spring DispatcherServlet 'dispatcherServlet'
+Initializing Servlet 'dispatcherServlet'
+Completed initialization in 27 ms
+Starting PlatformApplication on SC-201706110146 with PID 1948 (F:\ideaProject\platform\target\classes started by Administrator in F:\ideaProject\platform)
+No active profile set, falling back to default profiles: default
+Tomcat initialized with port(s): 7779 (http)
+Initializing ProtocolHandler ["http-nio-7779"]
+Starting service [Tomcat]
+Starting Servlet engine: [Apache Tomcat/9.0.21]
+Initializing Spring embedded WebApplicationContext
+Root WebApplicationContext: initialization completed in 4242 ms
+Initializing ExecutorService 'applicationTaskExecutor'
+Starting ProtocolHandler ["http-nio-7779"]
+Tomcat started on port(s): 7779 (http) with context path ''
+Started PlatformApplication in 9.734 seconds (JVM running for 18.149)
+Initializing Spring DispatcherServlet 'dispatcherServlet'
+Initializing Servlet 'dispatcherServlet'
+Completed initialization in 16 ms
+Starting PlatformApplication on SC-201706110146 with PID 16300 (F:\ideaProject\platform\target\classes started by Administrator in F:\ideaProject\platform)
+No active profile set, falling back to default profiles: default
+Tomcat initialized with port(s): 7779 (http)
+Initializing ProtocolHandler ["http-nio-7779"]
+Starting service [Tomcat]
+Starting Servlet engine: [Apache Tomcat/9.0.21]
+Initializing Spring embedded WebApplicationContext
+Root WebApplicationContext: initialization completed in 4176 ms
+Initializing ExecutorService 'applicationTaskExecutor'
+Starting ProtocolHandler ["http-nio-7779"]
+Tomcat started on port(s): 7779 (http) with context path ''
+Started PlatformApplication in 9.155 seconds (JVM running for 17.567)
+Initializing Spring DispatcherServlet 'dispatcherServlet'
+Initializing Servlet 'dispatcherServlet'
+Completed initialization in 15 ms
+Shutting down ExecutorService 'applicationTaskExecutor'
+Starting PlatformApplication on SC-201706110146 with PID 15540 (F:\ideaProject\platform\target\classes started by Administrator in F:\ideaProject\platform)
+No active profile set, falling back to default profiles: default
+Tomcat initialized with port(s): 7779 (http)
+Initializing ProtocolHandler ["http-nio-7779"]
+Starting service [Tomcat]
+Starting Servlet engine: [Apache Tomcat/9.0.21]
+Initializing Spring embedded WebApplicationContext
+Root WebApplicationContext: initialization completed in 4245 ms
+Initializing ExecutorService 'applicationTaskExecutor'
+Starting ProtocolHandler ["http-nio-7779"]
+Tomcat started on port(s): 7779 (http) with context path ''
+Started PlatformApplication in 11.247 seconds (JVM running for 20.775)
+Initializing Spring DispatcherServlet 'dispatcherServlet'
+Initializing Servlet 'dispatcherServlet'
+Completed initialization in 17 ms
+Shutting down ExecutorService 'applicationTaskExecutor'
+Starting PlatformApplication on SC-201706110146 with PID 16128 (F:\ideaProject\platform\target\classes started by Administrator in F:\ideaProject\platform)
+No active profile set, falling back to default profiles: default
+Tomcat initialized with port(s): 7779 (http)
+Initializing ProtocolHandler ["http-nio-7779"]
+Starting service [Tomcat]
+Starting Servlet engine: [Apache Tomcat/9.0.21]
+Initializing Spring embedded WebApplicationContext
+Root WebApplicationContext: initialization completed in 4503 ms
+Initializing ExecutorService 'applicationTaskExecutor'
+Starting ProtocolHandler ["http-nio-7779"]
+Tomcat started on port(s): 7779 (http) with context path ''
+Started PlatformApplication in 8.131 seconds (JVM running for 12.757)
+Initializing Spring DispatcherServlet 'dispatcherServlet'
+Initializing Servlet 'dispatcherServlet'
+Completed initialization in 15 ms
+HikariPool-1 - Starting...
+HikariPool-1 - Start completed.
+Starting PlatformApplication on SC-201706110146 with PID 12608 (F:\ideaProject\platform\target\classes started by Administrator in F:\ideaProject\platform)
+No active profile set, falling back to default profiles: default
+Tomcat initialized with port(s): 7779 (http)
+Initializing ProtocolHandler ["http-nio-7779"]
+Starting service [Tomcat]
+Starting Servlet engine: [Apache Tomcat/9.0.21]
+Initializing Spring embedded WebApplicationContext
+Root WebApplicationContext: initialization completed in 3676 ms
+Initializing ExecutorService 'applicationTaskExecutor'
+Starting ProtocolHandler ["http-nio-7779"]
+Tomcat started on port(s): 7779 (http) with context path ''
+Started PlatformApplication in 7.697 seconds (JVM running for 13.8)
+Initializing Spring DispatcherServlet 'dispatcherServlet'
+Initializing Servlet 'dispatcherServlet'
+Completed initialization in 20 ms
+HikariPool-1 - Starting...
+HikariPool-1 - Start completed.
+Starting PlatformApplication on SC-201706110146 with PID 14740 (F:\ideaProject\platform\target\classes started by Administrator in F:\ideaProject\platform)
+No active profile set, falling back to default profiles: default
+Tomcat initialized with port(s): 7779 (http)
+Initializing ProtocolHandler ["http-nio-7779"]
+Starting service [Tomcat]
+Starting Servlet engine: [Apache Tomcat/9.0.21]
+Initializing Spring embedded WebApplicationContext
+Root WebApplicationContext: initialization completed in 5130 ms
+Initializing ExecutorService 'applicationTaskExecutor'
+Starting ProtocolHandler ["http-nio-7779"]
+Tomcat started on port(s): 7779 (http) with context path ''
+Started PlatformApplication in 10.479 seconds (JVM running for 14.48)
+Initializing Spring DispatcherServlet 'dispatcherServlet'
+Initializing Servlet 'dispatcherServlet'
+Completed initialization in 28 ms
+HikariPool-1 - Starting...
+HikariPool-1 - Start completed.

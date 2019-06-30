@@ -1,0 +1,13 @@
+Starting PlatformApplication on SC-201706110146 with PID 4596 (F:\ideaProject\platform\target\classes started by Administrator in F:\ideaProject\platform)
+No active profile set, falling back to default profiles: default
+No MyBatis mapper was found in '[com.up.platform]' package. Please check your configuration.
+Tomcat initialized with port(s): 7779 (http)
+Initializing ProtocolHandler ["http-nio-7779"]
+Starting service [Tomcat]
+Starting Servlet engine: [Apache Tomcat/9.0.21]
+Initializing Spring embedded WebApplicationContext
+Root WebApplicationContext: initialization completed in 3173 ms
+Initializing ExecutorService 'applicationTaskExecutor'
+Starting ProtocolHandler ["http-nio-7779"]
+Tomcat started on port(s): 7779 (http) with context path ''
+Started PlatformApplication in 6.169 seconds (JVM running for 9.763)
