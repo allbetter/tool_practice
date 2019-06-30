@@ -1,1 +1,1 @@
-echo "# tool_practice" >> README.md
+学习教程持续更新中：https://www.cnblogs.com/allbetter/
