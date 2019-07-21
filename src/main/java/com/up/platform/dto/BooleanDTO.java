@@ -3,8 +3,8 @@ package com.up.platform.dto;
 import lombok.Data;
 
 @Data
-public class AddDTO {
+public class BooleanDTO {
 
-    private Integer id;
+    private Boolean status;
 
 }

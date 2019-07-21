@@ -3,10 +3,8 @@ package com.up.platform.dto;
 import lombok.Data;
 
 @Data
-public class BusinessUnitDTO {
+public class IdDTO {
 
     private Integer id;
 
-    private String buName;
-    
 }

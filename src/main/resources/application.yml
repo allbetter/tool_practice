@@ -2,10 +2,26 @@ server:
   port: 7779
 spring:
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3309/tool_platform?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
-    username: root
-    password: root
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://localhost:3309/tool_platform?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
+#    username: root
+#    password: root
+    master:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3309/tool_platform?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
+      username: root
+      password: root
+    default:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3309/tool_platform?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
+      username: root
+      password: root
+
+  redis:
+    host: localhost
+    port: 6379
+#    database: 2
+#    password:
 #logging:
 #  pattern:
 #    console: "$d - $msg%n"

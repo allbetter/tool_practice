@@ -2,10 +2,10 @@ package com.up.platform.entity;
 
 import java.util.Date;
 
-public class BusinessUnit {
+public class Department {
     private Integer id;
 
-    private String buName;
+    private String departmentName;
 
     private Date createTime;
 
@@ -19,12 +19,12 @@ public class BusinessUnit {
         this.id = id;
     }
 
-    public String getBuName() {
-        return buName;
+    public String getDepartmentName() {
+        return departmentName;
     }
 
-    public void setBuName(String buName) {
-        this.buName = buName == null ? null : buName.trim();
+    public void setDepartmentName(String departmentName) {
+        this.departmentName = departmentName == null ? null : departmentName.trim();
     }
 
     public Date getCreateTime() {

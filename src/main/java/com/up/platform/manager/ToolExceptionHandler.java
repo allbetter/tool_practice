@@ -3,7 +3,7 @@ package com.up.platform.manager;
 
 import com.up.platform.dto.ResultDTO;
 import com.up.platform.exception.ToolException;
-import com.up.platform.exception.ToolerAuthorizeException;
+import com.up.platform.exception.ToolAuthorizeException;
 import com.up.platform.utils.ResultDTOUtil;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -20,10 +20,10 @@ public class ToolExceptionHandler {
         return ResultDTOUtil.error(e.getCode(), e.getMessage());
     }
 
-    @ExceptionHandler(value = ToolerAuthorizeException.class)
+    @ExceptionHandler(value = ToolAuthorizeException.class)
     @ResponseBody
     @ResponseStatus(HttpStatus.FORBIDDEN)
-    public ResultDTO handlerAuthException(ToolerAuthorizeException e) {
+    public ResultDTO handlerAuthException(ToolAuthorizeException e) {
         return ResultDTOUtil.error(e.getCode(), e.getMessage());
     }
 

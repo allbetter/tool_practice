@@ -5,11 +5,11 @@ import lombok.Data;
 import javax.validation.constraints.NotEmpty;
 
 @Data
-public class BusinessUnitValidation {
+public class DepartmentValidation {
 
     private Integer id;
 
-    @NotEmpty(message = "BU名必填")
-    private String buName;
-    
+    @NotEmpty(message = "部门名必填")
+    private String departmentName;
+
 }
