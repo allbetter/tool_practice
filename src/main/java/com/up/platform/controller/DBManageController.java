@@ -115,7 +115,7 @@ public class DBManageController {
          */
         DataSourceContextHolder.setDBType("default");
         DBManage dbManage2 = dbManageService.findDBManageById(idVO.getId());
-        System.out.println("dbName is -> " + dbManage.getDbName() + "; dbIP is  -> " + dbManage.getDbHost() + "; dbUser is  -> " + dbManage.getDbUsername() + "; dbPasswd is -> " + dbManage.getDbPassword() + "; dbSchema is -> " + dbManage.getDbSchemaName());
+        log.info("dbName is -> " + dbManage.getDbName() + "; dbIP is  -> " + dbManage.getDbHost() + "; dbUser is  -> " + dbManage.getDbUsername() + "; dbPasswd is -> " + dbManage.getDbPassword() + "; dbSchema is -> " + dbManage.getDbSchemaName());
 
         DruidDataSource dynamicDataSource = new DruidDataSource();
         dynamicDataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
