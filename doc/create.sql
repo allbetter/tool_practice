@@ -11,10 +11,10 @@ CREATE TABLE `department` (
     PRIMARY KEY (`id`)
 ) COMMENT '部门信息';
 
-CREATE TABLE group_relation_info
+CREATE TABLE group_info
 (
 	`id` INT AUTO_INCREMENT,
-	`group_other_id` INT DEFAULT '0' NOT NULL COMMENT '关联Id',
+	`type_id` INT DEFAULT '0' NOT NULL COMMENT '关联Id',
 	`group_name` VARCHAR(64) NOT NULL COMMENT '分组名',
 	`group_define` INT(4) DEFAULT '0' NOT NULL COMMENT '自定义: 0不是, 是',
 	`group_sort` INT(4) DEFAULT '0' COMMENT '排序',

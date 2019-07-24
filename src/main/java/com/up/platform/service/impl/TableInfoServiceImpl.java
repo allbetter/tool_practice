@@ -19,6 +19,8 @@ public class TableInfoServiceImpl implements TableInfoService {
 
     @Override
     public List<TableInfo> getTableInfoBySchema(String schema) {
+
         return tableInfoMapper.getTableInfoBySchema(schema);
+
     }
 }

@@ -15,5 +15,5 @@ public interface UserService {
 
     List<User> findAllUser(PageBO page);
 
-    Boolean checkUserPassword(String name, String password);
+    Integer checkUserPassword(String name, String password);
 }

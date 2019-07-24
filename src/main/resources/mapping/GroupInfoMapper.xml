@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.up.platform.mapper.GroupRelationInfoMapper">
-  <resultMap id="BaseResultMap" type="com.up.platform.entity.GroupRelationInfo">
+<mapper namespace="com.up.platform.mapper.GroupInfoMapper">
+  <resultMap id="BaseResultMap" type="com.up.platform.entity.GroupInfo">
     <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="group_other_id" jdbcType="INTEGER" property="groupOtherId" />
+    <result column="type_id" jdbcType="INTEGER" property="typeId" />
     <result column="group_name" jdbcType="VARCHAR" property="groupName" />
     <result column="group_define" jdbcType="INTEGER" property="groupDefine" />
     <result column="group_sort" jdbcType="INTEGER" property="groupSort" />
@@ -13,32 +13,32 @@
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, group_other_id, group_name, group_define, group_sort, group_type, user_id, create_time, 
+    id, type_id, group_name, group_define, group_sort, group_type, user_id, create_time,
     update_time
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from group_relation_info
+    from group_info
     where id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from group_relation_info
+    delete from group_info
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.up.platform.entity.GroupRelationInfo" useGeneratedKeys="true">
-    insert into group_relation_info (group_other_id, group_name, group_define, 
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.up.platform.entity.GroupInfo" useGeneratedKeys="true">
+    insert into group_info (type_id, group_name, group_define,
       group_sort, group_type, user_id, 
       create_time, update_time)
-    values (#{groupOtherId,jdbcType=INTEGER}, #{groupName,jdbcType=VARCHAR}, #{groupDefine,jdbcType=INTEGER}, 
+    values (#{typeId,jdbcType=INTEGER}, #{groupName,jdbcType=VARCHAR}, #{groupDefine,jdbcType=INTEGER},
       #{groupSort,jdbcType=INTEGER}, #{groupType,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, 
       #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.up.platform.entity.GroupRelationInfo" useGeneratedKeys="true">
-    insert into group_relation_info
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.up.platform.entity.GroupInfo" useGeneratedKeys="true">
+    insert into group_info
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="groupOtherId != null">
-        group_other_id,
+      <if test="typeId != null">
+        type_id,
       </if>
       <if test="groupName != null">
         group_name,
@@ -63,8 +63,8 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="groupOtherId != null">
-        #{groupOtherId,jdbcType=INTEGER},
+      <if test="typeId != null">
+        #{typeId,jdbcType=INTEGER},
       </if>
       <if test="groupName != null">
         #{groupName,jdbcType=VARCHAR},
@@ -89,11 +89,11 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.up.platform.entity.GroupRelationInfo">
-    update group_relation_info
+  <update id="updateByPrimaryKeySelective" parameterType="com.up.platform.entity.GroupInfo">
+    update group_info
     <set>
-      <if test="groupOtherId != null">
-        group_other_id = #{groupOtherId,jdbcType=INTEGER},
+      <if test="typeId != null">
+        type_id = #{typeId,jdbcType=INTEGER},
       </if>
       <if test="groupName != null">
         group_name = #{groupName,jdbcType=VARCHAR},
@@ -110,24 +110,20 @@
       <if test="userId != null">
         user_id = #{userId,jdbcType=INTEGER},
       </if>
-      <if test="createTime != null">
-        create_time = #{createTime,jdbcType=TIMESTAMP},
-      </if>
       <if test="updateTime != null">
         update_time = #{updateTime,jdbcType=TIMESTAMP},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.up.platform.entity.GroupRelationInfo">
-    update group_relation_info
-    set group_other_id = #{groupOtherId,jdbcType=INTEGER},
+  <update id="updateByPrimaryKey" parameterType="com.up.platform.entity.GroupInfo">
+    update group_info
+    set type_id = #{typeId,jdbcType=INTEGER},
       group_name = #{groupName,jdbcType=VARCHAR},
       group_define = #{groupDefine,jdbcType=INTEGER},
       group_sort = #{groupSort,jdbcType=INTEGER},
       group_type = #{groupType,jdbcType=INTEGER},
       user_id = #{userId,jdbcType=INTEGER},
-      create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>

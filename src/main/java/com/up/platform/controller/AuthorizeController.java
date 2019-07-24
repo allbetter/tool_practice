@@ -19,6 +19,8 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
@@ -40,13 +42,16 @@ public class AuthorizeController {
 
         // 1. 用户信息和数据库匹配
         // TODO 没有正确的用户名返回没有判断
-        Boolean isUser = userService.checkUserPassword(loginValidation.getUserName(), loginValidation.getUserPassword());
-        if (isUser) {
+        Integer userId = userService.checkUserPassword(loginValidation.getUserName(), loginValidation.getUserPassword());
+        // TODO 存储到redis的信息放到map里，要转成json的字符串
+        Map<String, String> redisInfoMap = new HashMap<>();
+        // TODO userId不写死，获取数据源也不写死
+        redisInfoMap.put("userId", userId.toString());
+        if (userId > 0) {
             // 2. 设置token至redis
             String token = UUID.randomUUID().toString();
             Integer expire = RedisConstant.EXPIRE;
-            // TODO redis的value存用户名和邮箱
-            redisTemplate.opsForValue().set(String.format(RedisConstant.TOKEN_PREFIX, token), loginValidation.getUserName(), expire, TimeUnit.SECONDS);
+            redisTemplate.opsForValue().set(String.format(RedisConstant.TOKEN_PREFIX, token), userId.toString(), expire, TimeUnit.SECONDS);
 
             // 3. 设置token至cookie
             CookieUtil.set(response, CookieConstant.TOKEN, token, expire);

@@ -12,7 +12,7 @@ import com.up.platform.utils.BooleanDTOUtil;
 import com.up.platform.utils.IdDTOUtil;
 import com.up.platform.utils.ResultDTOUtil;
 import com.up.platform.validation.DepartmentValidation;
-import com.up.platform.validation.DeleteByIdValidation;
+import com.up.platform.validation.IdValidation;
 import com.up.platform.vo.ResultVO;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
@@ -81,17 +81,18 @@ public class DepartmentController {
         return ResultDTOUtil.success(idDTO);
     }
 
+    // TODO 删除的department={}
     @ApiOperation(value="删除部门")
     @PostMapping(path = "/delete",
             consumes = "application/json;charset=UTF-8", produces = "application/json;charset=UTF-8")
     @CrossOrigin(origins = "*", maxAge = 3600)
-    public ResultDTO delete(@RequestBody @Valid DeleteByIdValidation deleteByIdValidation, BindingResult bindingResult) {
+    public ResultDTO delete(@RequestBody @Valid IdValidation idValidation, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
-            log.error("删除部门失败，参数不正确，department={}", deleteByIdValidation);
+            log.error("删除部门失败，参数不正确，department={}", idValidation);
             throw new ToolException(ResultEnum.PARAM_ERROR.getCode(),
                     bindingResult.getFieldError().getDefaultMessage());
         }
-        Integer result = departmentService.deleteDepartment(deleteByIdValidation.getId());
+        Integer result = departmentService.deleteDepartment(idValidation.getId());
         Boolean status = (result == 1 ? true : false);
         BooleanDTO booleanDTO = BooleanDTOUtil.setStatus(status);
         return ResultDTOUtil.success(booleanDTO);

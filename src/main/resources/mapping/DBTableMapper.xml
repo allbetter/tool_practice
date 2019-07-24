@@ -89,6 +89,17 @@
       </if>
     </trim>
   </insert>
+  <insert id="insertBatch">
+    insert into db_table (db_id, table_zh_name, table_eng_name,
+      table_remark, table_discarded, user_id,
+      create_time, update_time)
+    values
+    <foreach collection="list" item="table" separator=",">
+      (#{table.dbId}, #{table.tableZhName}, #{table.tableEngName},
+      #{table.tableRemark}, #{table.tableDiscarded}, #{table.userId},
+      #{table.createTime}, #{table.updateTime})
+    </foreach>
+  </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.up.platform.entity.DBTable">
     update db_table
     <set>
@@ -110,9 +121,6 @@
       <if test="userId != null">
         user_id = #{userId,jdbcType=INTEGER},
       </if>
-      <if test="createTime != null">
-        create_time = #{createTime,jdbcType=TIMESTAMP},
-      </if>
       <if test="updateTime != null">
         update_time = #{updateTime,jdbcType=TIMESTAMP},
       </if>
@@ -127,7 +135,6 @@
       table_remark = #{tableRemark,jdbcType=VARCHAR},
       table_discarded = #{tableDiscarded,jdbcType=INTEGER},
       user_id = #{userId,jdbcType=INTEGER},
-      create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>

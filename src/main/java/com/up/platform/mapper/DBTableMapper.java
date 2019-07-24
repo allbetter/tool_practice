@@ -2,6 +2,8 @@ package com.up.platform.mapper;
 
 import com.up.platform.entity.DBTable;
 
+import java.util.List;
+
 public interface DBTableMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -14,4 +16,6 @@ public interface DBTableMapper {
     int updateByPrimaryKeySelective(DBTable record);
 
     int updateByPrimaryKey(DBTable record);
+
+    int insertBatch(List<DBTable> dbTables);
 }

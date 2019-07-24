@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @EnableSwagger2
-@MapperScan("com.up.platform.mapper")
+//@MapperScan("com.up.platform.mapper")
 @SpringBootApplication
 public class PlatformApplication {
 

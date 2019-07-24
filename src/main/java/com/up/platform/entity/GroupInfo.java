@@ -2,10 +2,10 @@ package com.up.platform.entity;
 
 import java.util.Date;
 
-public class GroupRelationInfo {
+public class GroupInfo {
     private Integer id;
 
-    private Integer groupOtherId;
+    private Integer typeId;
 
     private String groupName;
 
@@ -29,12 +29,12 @@ public class GroupRelationInfo {
         this.id = id;
     }
 
-    public Integer getGroupOtherId() {
-        return groupOtherId;
+    public Integer gettypeId() {
+        return typeId;
     }
 
-    public void setGroupOtherId(Integer groupOtherId) {
-        this.groupOtherId = groupOtherId;
+    public void settypeId(Integer typeId) {
+        this.typeId = typeId;
     }
 
     public String getGroupName() {

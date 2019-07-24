@@ -16,9 +16,8 @@ import com.up.platform.utils.BooleanDTOUtil;
 import com.up.platform.utils.IdDTOUtil;
 import com.up.platform.utils.ResultDTOUtil;
 import com.up.platform.validation.DBManageValidation;
-import com.up.platform.validation.DeleteByIdValidation;
+import com.up.platform.validation.IdValidation;
 import com.up.platform.vo.IdVO;
-import com.up.platform.vo.ResultVO;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
@@ -87,13 +86,13 @@ public class DBManageController {
     @PostMapping(path = "/delete",
             consumes = "application/json;charset=UTF-8", produces = "application/json;charset=UTF-8")
     @CrossOrigin(origins = "*", maxAge = 3600)
-    public ResultDTO delete(@RequestBody @Valid DeleteByIdValidation deleteByIdValidation, BindingResult bindingResult) {
+    public ResultDTO delete(@RequestBody @Valid IdValidation idValidation, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
-            log.error("删除数据库失败，参数不正确，dbManage={}", deleteByIdValidation);
+            log.error("删除数据库失败，参数不正确，dbManage={}", idValidation);
             throw new ToolException(ResultEnum.PARAM_ERROR.getCode(),
                     bindingResult.getFieldError().getDefaultMessage());
         }
-        Integer result = dbManageService.deleteDBManage(deleteByIdValidation.getId());
+        Integer result = dbManageService.deleteDBManage(idValidation.getId());
         Boolean status = (result == 1 ? true : false);
         BooleanDTO booleanDTO = BooleanDTOUtil.setStatus(status);
         return ResultDTOUtil.success(booleanDTO);
@@ -110,29 +109,29 @@ public class DBManageController {
         DataSourceContextHolder.setDBType("master");
         DBManage dbManage = dbManageService.findDBManageById(idVO.getId());
 
-        /**
-         * 根据slave数据源获取目标数据库信息
-         */
-        DataSourceContextHolder.setDBType("default");
-        DBManage dbManage2 = dbManageService.findDBManageById(idVO.getId());
-        log.info("dbName is -> " + dbManage.getDbName() + "; dbIP is  -> " + dbManage.getDbHost() + "; dbUser is  -> " + dbManage.getDbUsername() + "; dbPasswd is -> " + dbManage.getDbPassword() + "; dbSchema is -> " + dbManage.getDbSchemaName());
-
-        DruidDataSource dynamicDataSource = new DruidDataSource();
-        dynamicDataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dynamicDataSource.setUrl("jdbc:mysql://" + dbManage.getDbHost() + ":" + dbManage.getDbPort() + "/" + dbManage.getDbSchemaName() + "?characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull");
-        dynamicDataSource.setUsername(dbManage.getDbUsername());
-        dynamicDataSource.setPassword(dbManage.getDbPassword());
-
-        /**
-         * 创建动态数据源
-         */
-        Map<Object, Object> dataSourceMap = DynamicDataSource.getInstance().getDataSourceMap();
-        dataSourceMap.put("dynamic-slave", dynamicDataSource);
-        DynamicDataSource.getInstance().setTargetDataSources(dataSourceMap);
-        /**
-         * 切换为动态数据源实例
-         */
-        DataSourceContextHolder.setDBType("dynamic-slave");
+//        /**
+//         * 根据slave数据源获取目标数据库信息
+//         */
+//        DataSourceContextHolder.setDBType("default");
+//        DBManage dbManage2 = dbManageService.findDBManageById(idVO.getId());
+//        log.info("dbName is -> " + dbManage.getDbName() + "; dbIP is  -> " + dbManage.getDbHost() + "; dbUser is  -> " + dbManage.getDbUsername() + "; dbPasswd is -> " + dbManage.getDbPassword() + "; dbSchema is -> " + dbManage.getDbSchemaName());
+//
+//        DruidDataSource dynamicDataSource = new DruidDataSource();
+//        dynamicDataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
+//        dynamicDataSource.setUrl("jdbc:mysql://" + dbManage.getDbHost() + ":" + dbManage.getDbPort() + "/" + dbManage.getDbSchemaName() + "?characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull");
+//        dynamicDataSource.setUsername(dbManage.getDbUsername());
+//        dynamicDataSource.setPassword(dbManage.getDbPassword());
+//
+//        /**
+//         * 创建动态数据源
+//         */
+//        Map<Object, Object> dataSourceMap = DynamicDataSource.getInstance().getDataSourceMap();
+//        dataSourceMap.put("dynamic-slave", dynamicDataSource);
+//        DynamicDataSource.getInstance().setTargetDataSources(dataSourceMap);
+//        /**
+//         * 切换为动态数据源实例
+//         */
+//        DataSourceContextHolder.setDBType("dynamic-slave");
         List<TableInfo> tableInfoList = tableInfoService.getTableInfoBySchema(dbManage.getDbSchemaName());
         return tableInfoList;
 

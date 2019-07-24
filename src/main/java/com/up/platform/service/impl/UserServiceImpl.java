@@ -38,12 +38,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Boolean checkUserPassword(String name, String password) {
+    public Integer checkUserPassword(String name, String password) {
         User user = userMapper.selectByUserName(name);
         if (password.equals(user.getUserPassword())) {
-            return true;
+            return user.getId();
         } else {
-            return false;
+            return 0;
         }
     }
 }

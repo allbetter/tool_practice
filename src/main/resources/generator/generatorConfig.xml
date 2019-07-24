@@ -37,7 +37,7 @@
                <!--enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">-->
             <!--<generatedKey column="id" sqlStatement="JDBC" identity="true"/>-->
         <!--</table>-->
-        <!--<table tableName="group_relation_info" domainObjectName="GroupRelationInfo" enableCountByExample="false" enableUpdateByExample="false"-->
+        <!--<table tableName="group_info" domainObjectName="GroupInfo" enableCountByExample="false" enableUpdateByExample="false"-->
                <!--enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">-->
             <!--<generatedKey column="id" sqlStatement="JDBC" identity="true"/>-->
         <!--</table>-->
@@ -57,9 +57,9 @@
                <!--enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">-->
             <!--<generatedKey column="id" sqlStatement="JDBC" identity="true"/>-->
         <!--</table>-->
-        <table tableName="user" domainObjectName="User" enableCountByExample="false" enableUpdateByExample="false"
-               enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
-            <generatedKey column="id" sqlStatement="JDBC" identity="true"/>
-        </table>
+        <!--<table tableName="user" domainObjectName="User" enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">-->
+            <!--<generatedKey column="id" sqlStatement="JDBC" identity="true"/>-->
+        <!--</table>-->
     </context>
 </generatorConfiguration>
