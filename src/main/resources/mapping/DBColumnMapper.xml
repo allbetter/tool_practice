@@ -89,6 +89,17 @@
       </if>
     </trim>
   </insert>
+  <insert id="insertBatch" keyColumn="id" keyProperty="id" parameterType="com.up.platform.entity.DBColumn" useGeneratedKeys="true">
+    insert into db_column (table_id, column_eng_name, column_type,
+      column_remark, column_discarded, user_id,
+      create_time, update_time)
+    values
+    <foreach collection="list" item="column" separator=",">
+      (#{column.tableId}, #{column.columnEngName}, #{column.columnType},
+      #{column.columnRemark}, #{column.columnDiscarded}, #{column.userId},
+      #{column.createTime}, #{column.updateTime})
+    </foreach>
+  </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.up.platform.entity.DBColumn">
     update db_column
     <set>

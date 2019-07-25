@@ -6,5 +6,7 @@ import java.util.List;
 
 public interface DBTableService {
 
-    int insertBatch(Integer id);
+    void syncTable(Integer id);
+
+    int insertBatch(List<DBTable> dbTables);
 }

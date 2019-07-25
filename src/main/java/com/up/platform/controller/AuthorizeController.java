@@ -7,6 +7,7 @@ import com.up.platform.dto.ResultDTO;
 import com.up.platform.enums.AuthorizeEnum;
 import com.up.platform.service.UserService;
 import com.up.platform.utils.CookieUtil;
+import com.up.platform.utils.JsonUtil;
 import com.up.platform.utils.ResultDTOUtil;
 import com.up.platform.validation.LoginByNameValidation;
 import io.swagger.annotations.ApiOperation;
@@ -51,7 +52,7 @@ public class AuthorizeController {
             // 2. 设置token至redis
             String token = UUID.randomUUID().toString();
             Integer expire = RedisConstant.EXPIRE;
-            redisTemplate.opsForValue().set(String.format(RedisConstant.TOKEN_PREFIX, token), userId.toString(), expire, TimeUnit.SECONDS);
+            redisTemplate.opsForValue().set(String.format(RedisConstant.TOKEN_PREFIX, token), JsonUtil.Map2JsonString(redisInfoMap), expire, TimeUnit.SECONDS);
 
             // 3. 设置token至cookie
             CookieUtil.set(response, CookieConstant.TOKEN, token, expire);
