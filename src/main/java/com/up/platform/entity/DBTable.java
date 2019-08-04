@@ -17,6 +17,10 @@ public class DBTable {
 
     private Integer userId;
 
+    private Date dbCreateTime;
+
+    private Date dbUpdateTime;
+
     private Date createTime;
 
     private Date updateTime;
@@ -75,6 +79,22 @@ public class DBTable {
 
     public void setUserId(Integer userId) {
         this.userId = userId;
+    }
+
+    public Date getDbCreateTime() {
+        return dbCreateTime;
+    }
+
+    public void setDbCreateTime(Date dbCreateTime) {
+        this.dbCreateTime = dbCreateTime;
+    }
+
+    public Date getDbUpdateTime() {
+        return dbUpdateTime;
+    }
+
+    public void setDbUpdateTime(Date dbUpdateTime) {
+        this.dbUpdateTime = dbUpdateTime;
     }
 
     public Date getCreateTime() {

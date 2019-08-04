@@ -9,12 +9,14 @@
     <result column="table_remark" jdbcType="VARCHAR" property="tableRemark" />
     <result column="table_discarded" jdbcType="INTEGER" property="tableDiscarded" />
     <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="db_create_time" jdbcType="TIMESTAMP" property="dbCreateTime" />
+    <result column="db_update_time" jdbcType="TIMESTAMP" property="dbUpdateTime" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
   </resultMap>
   <sql id="Base_Column_List">
     id, db_id, table_zh_name, table_eng_name, table_remark, table_discarded, user_id, 
-    create_time, update_time
+    db_create_time, db_update_time, create_time, update_time
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -29,10 +31,12 @@
   <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.up.platform.entity.DBTable" useGeneratedKeys="true">
     insert into db_table (db_id, table_zh_name, table_eng_name, 
       table_remark, table_discarded, user_id, 
-      create_time, update_time)
+      db_create_time, db_update_time, create_time, 
+      update_time)
     values (#{dbId,jdbcType=INTEGER}, #{tableZhName,jdbcType=VARCHAR}, #{tableEngName,jdbcType=VARCHAR}, 
       #{tableRemark,jdbcType=VARCHAR}, #{tableDiscarded,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, 
-      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
+      #{dbCreateTime,jdbcType=TIMESTAMP}, #{dbUpdateTime,jdbcType=TIMESTAMP}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.up.platform.entity.DBTable" useGeneratedKeys="true">
     insert into db_table
@@ -54,6 +58,12 @@
       </if>
       <if test="userId != null">
         user_id,
+      </if>
+      <if test="dbCreateTime != null">
+        db_create_time,
+      </if>
+      <if test="dbUpdateTime != null">
+        db_update_time,
       </if>
       <if test="createTime != null">
         create_time,
@@ -81,6 +91,12 @@
       <if test="userId != null">
         #{userId,jdbcType=INTEGER},
       </if>
+      <if test="dbCreateTime != null">
+        #{dbCreateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="dbUpdateTime != null">
+        #{dbUpdateTime,jdbcType=TIMESTAMP},
+      </if>
       <if test="createTime != null">
         #{createTime,jdbcType=TIMESTAMP},
       </if>
@@ -91,8 +107,8 @@
   </insert>
   <insert id="insertBatch" keyColumn="id" keyProperty="id" parameterType="com.up.platform.entity.DBTable" useGeneratedKeys="true">
     insert into db_table (db_id, table_zh_name, table_eng_name,
-      table_remark, table_discarded, user_id,
-      create_time, update_time)
+    table_remark, table_discarded, user_id,
+    create_time, update_time)
     values
     <foreach collection="list" item="table" separator=",">
       (#{table.dbId}, #{table.tableZhName}, #{table.tableEngName},
@@ -121,6 +137,12 @@
       <if test="userId != null">
         user_id = #{userId,jdbcType=INTEGER},
       </if>
+      <if test="dbCreateTime != null">
+        db_create_time = #{dbCreateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="dbUpdateTime != null">
+        db_update_time = #{dbUpdateTime,jdbcType=TIMESTAMP},
+      </if>
       <if test="updateTime != null">
         update_time = #{updateTime,jdbcType=TIMESTAMP},
       </if>
@@ -135,6 +157,8 @@
       table_remark = #{tableRemark,jdbcType=VARCHAR},
       table_discarded = #{tableDiscarded,jdbcType=INTEGER},
       user_id = #{userId,jdbcType=INTEGER},
+      db_create_time = #{dbCreateTime,jdbcType=TIMESTAMP},
+      db_update_time = #{dbUpdateTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>

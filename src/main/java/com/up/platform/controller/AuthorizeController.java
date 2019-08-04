@@ -4,7 +4,10 @@ package com.up.platform.controller;
 import com.up.platform.constant.CookieConstant;
 import com.up.platform.constant.RedisConstant;
 import com.up.platform.dto.ResultDTO;
+import com.up.platform.entity.SysUser;
 import com.up.platform.enums.AuthorizeEnum;
+import com.up.platform.enums.RedisEnum;
+import com.up.platform.manager.RequestHolder;
 import com.up.platform.service.UserService;
 import com.up.platform.utils.CookieUtil;
 import com.up.platform.utils.JsonUtil;
@@ -19,6 +22,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import java.util.HashMap;
 import java.util.Map;
@@ -39,15 +43,13 @@ public class AuthorizeController {
     @ApiOperation(value = "登录")
     @PostMapping(value = "/login", produces = {"application/json;charset=UTF-8"})
     @CrossOrigin(origins = "*", maxAge = 3600)
-    public ResultDTO login(@RequestBody @Valid LoginByNameValidation loginValidation, HttpServletResponse response) {
+    public ResultDTO login(@RequestBody @Valid LoginByNameValidation loginValidation, HttpServletResponse response, HttpServletRequest request) {
 
         // 1. 用户信息和数据库匹配
         // TODO 没有正确的用户名返回没有判断
         Integer userId = userService.checkUserPassword(loginValidation.getUserName(), loginValidation.getUserPassword());
-        // TODO 存储到redis的信息放到map里，要转成json的字符串
-        Map<String, String> redisInfoMap = new HashMap<>();
-        // TODO userId不写死，获取数据源也不写死
-        redisInfoMap.put("userId", userId.toString());
+        Map<String, Object> redisInfoMap = new HashMap<>();
+        redisInfoMap.put(RedisEnum.USER_ID.getMessage(), userId);
         if (userId > 0) {
             // 2. 设置token至redis
             String token = UUID.randomUUID().toString();
@@ -75,6 +77,9 @@ public class AuthorizeController {
 
             //3. 清除cookie
             CookieUtil.set(response, CookieConstant.TOKEN, null, 0);
+
+            // TODO 会把所有清除嘛？
+            RequestHolder.remove();
             return ResultDTOUtil.success(true);
         } else {
             return ResultDTOUtil.error(AuthorizeEnum.AUTH_NO_COOKIE.getCode(), AuthorizeEnum.AUTH_NO_COOKIE.getMessage());

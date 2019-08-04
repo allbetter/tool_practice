@@ -5,7 +5,7 @@ import java.util.Date;
 public class GroupRelation {
     private Integer id;
 
-    private Integer relationOtherId;
+    private Integer relationId;
 
     private Integer groupId;
 
@@ -23,12 +23,12 @@ public class GroupRelation {
         this.id = id;
     }
 
-    public Integer getRelationOtherId() {
-        return relationOtherId;
+    public Integer getRelationId() {
+        return relationId;
     }
 
-    public void setRelationOtherId(Integer relationOtherId) {
-        this.relationOtherId = relationOtherId;
+    public void setRelationId(Integer relationId) {
+        this.relationId = relationId;
     }
 
     public Integer getGroupId() {

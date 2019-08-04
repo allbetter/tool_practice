@@ -14,4 +14,6 @@ public interface GroupInfoMapper {
     int updateByPrimaryKeySelective(GroupInfo record);
 
     int updateByPrimaryKey(GroupInfo record);
+
+    GroupInfo selectByTypeId(Integer typeId);
 }

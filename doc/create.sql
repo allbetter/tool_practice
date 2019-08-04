@@ -50,11 +50,12 @@ CREATE TABLE db_table
 	`table_remark` VARCHAR(1024) NOT NULL COMMENT '表备注',
 	`table_discarded` INT(4) NOT NULL COMMENT '表废弃: 0未废弃, 1废弃',
 	`user_id` INT DEFAULT '0' NOT NULL COMMENT '用户Id',
+	`db_create_time` DATETIME COMMENT '数据库创建时间',
+	`db_update_time` DATETIME COMMENT '数据库修改时间',
 	`create_time` TIMESTAMP NOT NULL DEFAULT current_timestamp COMMENT '创建时间',
   `update_time` TIMESTAMP NOT NULL DEFAULT current_timestamp ON UPDATE current_timestamp COMMENT '修改时间',
   PRIMARY KEY (`id`)
 ) COMMENT '表信息表';
-
 CREATE TABLE db_column
 (
 	`id` INT AUTO_INCREMENT,
@@ -72,7 +73,7 @@ CREATE TABLE db_column
 CREATE TABLE group_relation
 (
 	`id` INT AUTO_INCREMENT,
-	`relation_other_id` INT DEFAULT '0' NOT NULL COMMENT '关联Id',
+	`relation_id` INT DEFAULT '0' NOT NULL COMMENT '关联Id',
 	`group_id` INT DEFAULT '0' NOT NULL COMMENT '分组Id',
 	`user_id` INT DEFAULT '0' NOT NULL COMMENT '用户Id',
 	`create_time` TIMESTAMP NOT NULL DEFAULT current_timestamp COMMENT '创建时间',
@@ -95,3 +96,6 @@ CREATE TABLE user
 select schema_name from information_schema.schemata;
 SELECT TABLE_NAME, TABLE_COMMENT, CREATE_TIME, UPDATE_TIME FROM information_schema.TABLES where table_schema='tool_platform';
 SELECT COLUMN_NAME, COLUMN_TYPE, COLUMN_COMMENT from information_schema.columns where table_name='db_table' and table_schema='tool_platform';
+
+
+-- ,jdbcType=\w{0,9}

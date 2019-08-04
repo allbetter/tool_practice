@@ -9,4 +9,6 @@ public interface GroupInfoService {
     int editGroupInfo(GroupInfo groupInfo);
 
     int deleteGroupInfo(Integer id);
+
+    GroupInfo selectByTypeId(Integer typeId);
 }

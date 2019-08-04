@@ -26,4 +26,9 @@ public class GroupInfoServiceImpl implements GroupInfoService {
     public int deleteGroupInfo(Integer id) {
         return groupInfoMapper.deleteByPrimaryKey(id);
     }
+
+    @Override
+    public GroupInfo selectByTypeId(Integer typeId) {
+        return groupInfoMapper.selectByTypeId(typeId);
+    }
 }

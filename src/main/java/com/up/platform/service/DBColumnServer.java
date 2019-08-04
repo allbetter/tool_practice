@@ -10,5 +10,5 @@ public interface DBColumnServer {
 
     void syncColumn(DBManage dbManage, List<DBTable> dbTables);
 
-    int insertBatch(List<DBColumn> columns);
+    int insertBatch(List<DBColumn> dbColumns);
 }

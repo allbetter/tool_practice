@@ -127,4 +127,10 @@
       update_time = #{updateTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <select id="selectByTypeId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from group_info
+    where type_id = #{typeId,jdbcType=INTEGER}
+  </select>
 </mapper>

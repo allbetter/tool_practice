@@ -2,6 +2,8 @@ package com.up.platform.mapper;
 
 import com.up.platform.entity.GroupRelation;
 
+import java.util.List;
+
 public interface GroupRelationMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -14,4 +16,8 @@ public interface GroupRelationMapper {
     int updateByPrimaryKeySelective(GroupRelation record);
 
     int updateByPrimaryKey(GroupRelation record);
+
+    int insertBatch(List<GroupRelation> groupRelations);
+
+    GroupRelation selectByTypeId(Integer id);
 }

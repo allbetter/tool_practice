@@ -2,9 +2,14 @@ package com.up.platform.aspect;
 
 import com.up.platform.constant.CookieConstant;
 import com.up.platform.constant.RedisConstant;
+import com.up.platform.entity.SysUser;
 import com.up.platform.exception.AuthorizeException;
+import com.up.platform.manager.RequestHolder;
 import com.up.platform.utils.CookieUtil;
+import com.up.platform.utils.JsonUtil;
+import com.up.platform.utils.UserUtil;
 import lombok.extern.slf4j.Slf4j;
+import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
@@ -18,11 +23,12 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import java.util.Map;
 
 @Aspect
 // TODO @Configuration 和 @Component的区别
 //@Configuration
-//@Component
+@Component
 public class AuthorizeAspect {
 
     @Autowired
@@ -32,6 +38,8 @@ public class AuthorizeAspect {
             "&& !execution(public * com.up.platform.controller.AuthorizeController.*(..))")
     public void verify() {}
 
+    // TODO SecurityContextHolder的鉴权方式
+    // TODO 移除对应的ThreadLocal对象，防止内存泄漏
     @Before("verify()")
     public void doVerify() {
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
@@ -45,8 +53,15 @@ public class AuthorizeAspect {
 
         // 去redis里查询
         String tokenValue = redisTemplate.opsForValue().get(String.format(RedisConstant.TOKEN_PREFIX, cookie.getValue()));
+        Map<String, Object> redisInfoMap = JsonUtil.JsonString2Map(tokenValue);
+        Integer userId = UserUtil.getUserId(redisInfoMap);
         if (StringUtils.isEmpty(tokenValue)) {
             throw new AuthorizeException();
         }
+
+        SysUser sysUser = new SysUser();
+        sysUser.setUserId(userId);
+        RequestHolder.add(sysUser);
+        RequestHolder.add(request);
     }
 }
